@@ -10,21 +10,10 @@ public class Forecast {
 
     public String date;
 
-    @SerializedName("cond")
-    public More more;
+    @SerializedName("cond_txt_d")
+    public String info;
+    public String tmp_max;
+    public String tmp_min;
 
-    @SerializedName("tmp")
-    public Temperature temperature;
-
-
-    public class More {
-        @SerializedName("txt_d")
-        public String info;
-    }
-
-    public class Temperature{
-        public String max;
-        public String min;
-    }
 
 }

@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context="com.lovelyweather.android.WeatherActivity">
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/bg_img"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ScrollView
         android:id="@+id/sv_weather"
@@ -16,14 +30,23 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
             <include layout="@layout/weather_title"/>
             <include layout="@layout/weather_now"/>
             <include layout="@layout/forecast"/>
-            <include layout="@layout/aqi"/>
             <include layout="@layout/suggestion"/>
         </LinearLayout>
 
     </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+        <fragment
+            android:id="@+id/choose_area_fragment"
+            android:name="com.lovelyweather.android.ChooseAreaFragment"
+            android:layout_gravity="start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
+
+    </android.support.v4.widget.DrawerLayout>
 </FrameLayout>
